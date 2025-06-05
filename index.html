@@ -1,88 +1,196 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio de Artista</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HENRYHALO</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Oi! Eu sou [Seu Nome]</h1>
-    <p>Artista digital especializado em [estilo/tema]</p>
-    <div class="social-links">
-      <a href="#" target="_blank">Instagram</a>
-      <a href="#" target="_blank">Twitter/X</a>
-      <a href="#" target="_blank">ArtStation</a>
+
+  <!-- Top navigation -->
+  <nav class="navbar">
+    <button onclick="scrollToSection('home')">Home</button>
+    <button onclick="scrollToSection('about')">About</button>
+    <button onclick="scrollToSection('portfolio')">Portfolio</button>
+    <button onclick="scrollToSection('commissions')">Commissions</button>
+    <button onclick="scrollToSection('artfight')">Art Fight</button>
+  </nav>
+
+  <!-- Home section -->
+  <div id="home" class="topo">
+    <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/85850041_uxBazR54GEx0jwK.png" alt="Profile Picture" class="imagem-circular">
+  </div>
+
+  <div class="conteudo">
+    <div class="username">✩ HenryHalo ✩</div>
+
+    <div class="bio">
+      Hello! My name is HenryHalo! I am a digital and traditional artist who works with 2D art and animation. I currently have open commissions and do volunteer work!
     </div>
-    <nav>
-      <a href="#portfolio">Portfólio</a>
-      <a href="#about">Sobre</a>
-      <a href="#commissions">Comissões</a>
-      <a href="#contact">Contato</a>
-    </nav>
-  </header>
 
-  <main>
-    <section id="portfolio">
-      <h2>Portfólio</h2>
-      <div class="gallery">
-        <img src="arte1.jpg" alt="Arte 1">
-        <img src="arte2.jpg" alt="Arte 2">
-        <img src="arte3.jpg" alt="Arte 3">
+    <div class="habilidades">
+      <h2>I'm specialized in:</h2>
+      <div class="caixas">
+        <div class="caixa">Cartoon Style</div>
+        <div class="caixa">2D animation</div>
+        <div class="caixa">Character Design</div>
       </div>
-    </section>
+    </div>
 
+    <!-- Divider -->
+    <hr class="divider">
+
+    <!-- About Me -->
     <section id="about">
-      <h2>Sobre Mim</h2>
-      <p>Sou um artista digital apaixonado por [tema]. Adoro criar personagens únicos...</p>
-      <ul>
-        <li>Software: Clip Studio Paint</li>
-        <li>Tablet: Huion Kamvas 13</li>
-      </ul>
+      <h2>About Me</h2>
+      <p>
+        My name is HenryHalo, and I've been exploring the world of digital and traditional art for many years. Art has always been my passion – whether it's character design, storytelling through illustrations, or bringing movements to life through animation. 
+        <br><br>
+        Over the years, I’ve developed my own colorful style, focusing on expressive characters and dynamic compositions. I love collaborating with others, bringing their ideas to life, and constantly learning new techniques to refine my craft.
+        <br><br>
+        Beyond art, I enjoy being part of creative communities, participating in events like Art Fight, and offering commission services to make art more accessible and personal for everyone. Thank you for visiting my page!
+      </p>
     </section>
 
+    <!-- Portfolio -->
+    <hr class="divider">
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="URL1" alt="Artwork 1">
+          <div class="portfolio-text">
+            <h3>Character Illustration</h3>
+            <p>Expressive character work showing emotion, pose, and creativity.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="URL2" alt="Artwork 2">
+          <div class="portfolio-text">
+            <h3>Animation Frame</h3>
+            <p>A preview of one of my 2D animation sequences.</p>
+          </div>
+        </div>
+        <!-- Add more items as needed -->
+      </div>
+    </section>
+
+    <!-- Commissions -->
+    <hr class="divider">
     <section id="commissions">
-      <h2>Comissões</h2>
-      <div class="commission-card" onclick="toggleCommission(this)">
-        <img src="busto.png" alt="Busto">
-        <div class="commission-info">
-          <p>Busto - R$ 100</p>
-          <p>Prazo: 3 dias úteis</p>
+      <h2>My Commissions!</h2>
+      <div class="projetos">
+        <div class="card" onclick="openModal(0)">
+          <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/101109707_5X7OOOtY4WQ9Qnx.png" alt="Headshot">
+          <h3>HEADSHOT</h3>
+          <h3>$5</h3>
         </div>
-      </div>
-      <div class="commission-card" onclick="toggleCommission(this)">
-        <img src="corpo.png" alt="Corpo Inteiro">
-        <div class="commission-info">
-          <p>Corpo Inteiro - R$ 200</p>
-          <p>Prazo: 5 dias úteis</p>
+        <div class="card" onclick="openModal(1)">
+          <img src="https://storage.ko-fi.com/cdn/useruploads/display/c50d3062-d554-4ec5-bef7-83a0ce4aafdc_sketch-1747804611242.png" alt="Bust">
+          <h3>BUST</h3>
+          <h3>$10</h3>
+        </div>
+        <div class="card" onclick="openModal(2)">
+          <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/101108566_YTPqmzgINHIKUHX.png" alt="Halfbody">
+          <h3>HALFBODY</h3>
+          <h3>$15</h3>
+        </div>
+        <div class="card" onclick="openModal(3)">
+          <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/101109425_f6HFZvEpZdhIVvj.png" alt="Fullbody">
+          <h3>FULLBODY</h3>
+          <h3>$20</h3>
         </div>
       </div>
     </section>
+  </div>
 
-    <section id="contact">
-      <h2>Contato</h2>
-      <form>
-        <input type="text" placeholder="Seu nome" required>
-        <input type="email" placeholder="Seu email" required>
-        <textarea placeholder="Sua mensagem" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-      <p>Email: contato@seudominio.com</p>
-      <a href="#" class="support-button">Apoie no Ko-fi</a>
-    </section>
-  </main>
+  <!-- Modal for commission details -->
+  <div id="commissionModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <div class="modal-slide" id="slideImage"></div>
+      <p id="modalText"></p>
+    </div>
+  </div>
 
+  <!-- Art Fight -->
+  <hr class="divider">
+  <section id="artfight" class="artfight-section">
+    <h2>Art Fight!</h2>
+    <p>
+      <a href="https://artfight.net/info/about" target="_blank">Art Fight</a> is an annual event for artists! I'm taking part and attacking all kinds of characters... even yours~
+    </p>
+    <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/101111462_8zfhPpzMnYZ1JQK.png" alt="Art Fight Banner" class="artfight-img">
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; [Seu Nome] - Todos os direitos reservados.</p>
+    <h2>Contact me!</h2>
+    <div class="social-links">
+      <a href="https://instagram.com/henry_.halo" target="_blank"><span><i class="fab fa-instagram"></i> Instagram</span></a>
+      <a href="https://t.me/HenryHaloArts" target="_blank"><span><i class="fab fa-telegram-plane"></i> Telegram</span></a>
+      <a href="https://toyhou.se/HenryHalo" target="_blank"><span><i class="fas fa-user"></i> Toyhou.se</span></a>
+      <a href="https://ko-fi.com/HenryHalo" target="_blank"><span><i class="fas fa-coffee"></i> Kofi</span></a>
+    </div>
+    <div style="margin-top: 30px;">
+      <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/85778331_muxcP807Cb3EXgG.gif" 
+           alt="Footer Illustration" style="max-width: 100%; height: auto; border-radius: 12px;">
+    </div>
   </footer>
 
   <script>
-    function toggleCommission(card) {
-      card.classList.toggle('open');
+    // Navigation scroll
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Modal system
+    const commissions = [
+      {
+        images: [
+          "https://f2.toyhou.se/file/f2-toyhou-se/images/101109707_5X7OOOtY4WQ9Qnx.png"
+        ],
+        text: "Headshot drawing of your character! Additions like shading and extra characters may cost more."
+      },
+      {
+        images: [
+          "https://storage.ko-fi.com/cdn/useruploads/display/c50d3062-d554-4ec5-bef7-83a0ce4aafdc_sketch-1747804611242.png"
+        ],
+        text: "Bust drawing of your character! Additions like shading and extra characters may cost more."
+      },
+      {
+        images: [
+          "https://f2.toyhou.se/file/f2-toyhou-se/images/101108566_YTPqmzgINHIKUHX.png"
+        ],
+        text: "Halfbody drawing of your character! Additions like shading and extra characters may cost more."
+      },
+      {
+        images: [
+          "https://f2.toyhou.se/file/f2-toyhou-se/images/101109425_f6HFZvEpZdhIVvj.png"
+        ],
+        text: "Fullbody drawing of your character! Additions like shading and extra characters may cost more."
+      }
+    ];
+
+    function openModal(index) {
+      const modal = document.getElementById("commissionModal");
+      const slide = document.getElementById("slideImage");
+      const text = document.getElementById("modalText");
+
+      slide.innerHTML = commissions[index].images.map(url => `<img src="${url}" style="width:100%; margin-bottom:10px;">`).join('');
+      text.innerText = commissions[index].text;
+
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("commissionModal").style.display = "none";
     }
   </script>
 </body>
