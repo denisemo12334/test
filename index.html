@@ -11,6 +11,22 @@
   <!-- CSS externo -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
+<button id="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+  ↑ Top
+</button>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const btn = document.getElementById('voltar-topo');
+    if (window.scrollY > 300) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+</script>
+
 <body>
 
   <!-- Top navigation -->
