@@ -7,7 +7,7 @@ body {
 }
 
 .topo {
-  background-image: url('https://f2.toyhou.se/file/f2-toyhou-se/images/101108546_43pNeXOlhUgQIJM.png');
+  background-image: url('https://f2.toyhou.se/file/f2-toyhou-se/images/101108546_43pNeXOlhUgQIJM.png'); 
   background-size: cover;
   background-position: center;
   height: 200px;
@@ -24,6 +24,11 @@ body {
   left: 50%;
   transform: translateX(-50%);
   border: 4px solid #151024;
+  transition: filter 0.3s ease;
+}
+
+.imagem-circular:hover {
+  filter: brightness(1.2);
 }
 
 .conteudo {
@@ -62,13 +67,12 @@ body {
 .caixa {
   background-color: #5a4b7e;
   padding: 12px 18px;
-  border-radius: 20px;
+  border-radius: 6px;
   font-size: 15px;
   color: #fff;
   min-width: 100px;
 }
 
-/* Linha divisória */
 hr.divider {
   border: none;
   border-top: 1px solid #ccc;
@@ -76,89 +80,47 @@ hr.divider {
   width: 100%;
 }
 
-/* Botões Navegação */
-.nav-buttons {
+.projetos {
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
-.nav-buttons button {
-  background-color: #5a4b7e;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 15px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.card {
+  background-color: #2e2e3e;
+  border-radius: 10px;
+  width: 220px;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.nav-buttons button:hover {
-  background-color: #7b66a3;
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-.nav-buttons button.active {
-  background-color: #7b66a3;
-}
-
-/* Seções */
-.secao {
-  display: none;
-}
-
-.secao.ativa {
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
   display: block;
 }
 
-/* Slide containers */
-.slide-container {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 10px 0 30px 0;
-  scroll-snap-type: x mandatory;
-}
-
-.slide-item {
-  flex: 0 0 auto;
-  scroll-snap-align: center;
-  background-color: #2e2e3e;
-  border-radius: 10px;
-  padding: 10px;
-  width: 280px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-.slide-item img {
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-
-.slide-item h3 {
+.card h3 {
   font-size: 18px;
-  margin: 5px 0;
+  margin: 10px 0 5px;
 }
 
-.slide-item p {
+.card p {
   font-size: 14px;
-  color: #ccc;
-  padding: 0 10px 10px;
+  padding: 0 10px 15px;
+  color: #f0f0f0;
 }
 
-/* Contact */
-.contact-info {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-/* Footer */
 footer {
   background-color: #0f0b1a;
   padding: 40px 20px;
@@ -194,25 +156,77 @@ footer h2 {
   background-color: #3a2a4a;
 }
 
-/* Voltar ao topo */
+.social-links i {
+  font-size: 20px;
+}
+
+.artfight-section {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.artfight-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.artfight-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.artfight-section a {
+  color: #b9adde;
+  text-decoration: underline;
+}
+
+.artfight-img {
+  max-width: 100%;
+  width: 350px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Botão voltar ao topo */
 #voltar-topo {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 20px;
+  right: 20px;
   background-color: #5a4b7e;
   color: white;
   border: none;
   padding: 10px 15px;
-  border-radius: 30px;
-  font-size: 18px;
+  border-radius: 50px;
   cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  font-size: 18px;
+  display: none;
   z-index: 999;
 }
 
 #voltar-topo.show {
-  opacity: 1;
-  pointer-events: auto;
+  display: block;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .username {
+    font-size: 32px;
+  }
+
+  .bio,
+  .artfight-section p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .caixas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
 }
