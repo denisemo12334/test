@@ -68,6 +68,7 @@ body {
   min-width: 100px;
 }
 
+/* Linha divisória */
 hr.divider {
   border: none;
   border-top: 1px solid #ccc;
@@ -99,6 +100,11 @@ hr.divider {
   background-color: #7b66a3;
 }
 
+.nav-buttons button.active {
+  background-color: #7b66a3;
+}
+
+/* Seções */
 .secao {
   display: none;
 }
@@ -107,12 +113,12 @@ hr.divider {
   display: block;
 }
 
-/* Slide de Comissões e Portfólio */
+/* Slide containers */
 .slide-container {
   display: flex;
   overflow-x: auto;
   gap: 20px;
-  padding: 20px;
+  padding: 10px 0 30px 0;
   scroll-snap-type: x mandatory;
 }
 
@@ -122,7 +128,7 @@ hr.divider {
   background-color: #2e2e3e;
   border-radius: 10px;
   padding: 10px;
-  width: 300px;
+  width: 280px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
@@ -145,13 +151,14 @@ hr.divider {
   padding: 0 10px 10px;
 }
 
-/* Contato */
+/* Contact */
 .contact-info {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 30px;
 }
 
+/* Footer */
 footer {
   background-color: #0f0b1a;
   padding: 40px 20px;
@@ -187,6 +194,25 @@ footer h2 {
   background-color: #3a2a4a;
 }
 
-.social-links i {
-  font-size: 20px;
+/* Voltar ao topo */
+#voltar-topo {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #5a4b7e;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+#voltar-topo.show {
+  opacity: 1;
+  pointer-events: auto;
 }
