@@ -2,100 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile</title>
+  <style>
+    /* CSS completo logo abaixo */
+  </style>
 </head>
-
-<button id="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-  ↑ Top
-</button>
-
-<script>
-  window.addEventListener('scroll', function() {
-    const btn = document.getElementById('voltar-topo');
-    if (window.scrollY > 300) {
-      btn.classList.add('show');
-    } else {
-      btn.classList.remove('show');
-    }
-  });
-</script>
-
 <body>
-  <div class="topo">
-    <img src="profile.jpg" alt="Profile" class="imagem-circular" />
-  </div>
+
+  <div class="topo"></div>
+  <img src="https://i.imgur.com/yourprofilepic.jpg" alt="Profile" class="imagem-circular" />
 
   <div class="conteudo">
-    <h1 class="username">My Name</h1>
-    <p class="bio">This is my short bio. I love to create and share my art with the world.</p>
+    <h1 class="username">YourName</h1>
+    <p class="bio">
+      This is your bio text. Tell a little about yourself here.
+    </p>
 
-    <section class="habilidades">
+    <div class="habilidades">
       <h2>Skills</h2>
       <div class="caixas">
+        <div class="caixa">Drawing</div>
         <div class="caixa">Digital Art</div>
-        <div class="caixa">Character Design</div>
         <div class="caixa">Animation</div>
+        <div class="caixa">Web Design</div>
       </div>
-    </section>
+    </div>
 
     <hr class="divider" />
 
-    <nav class="menu-secundario">
-      <button class="tab-button" data-tab="commissions">Commissions</button>
-      <button class="tab-button" data-tab="portfolio">Portfolio</button>
-      <button class="tab-button" data-tab="contact">Contact</button>
-    </nav>
+    <div class="nav-buttons">
+      <button data-target="home" class="active">Home</button>
+      <button data-target="commissions">Commissions</button>
+      <button data-target="portfolio">Portfolio</button>
+      <button data-target="contact">Contact</button>
+    </div>
 
-    <section id="commissions" class="tab-content hidden">
-      <h2>Commissions</h2>
-      <div class="carousel">
-        <img src="commission1.jpg" alt="Commission Sample 1" />
-        <img src="commission2.jpg" alt="Commission Sample 2" />
-        <img src="commission3.jpg" alt="Commission Sample 3" />
-      </div>
-    </section>
+    <!-- Seções trocáveis -->
+    <div id="home" class="secao ativa">
+      <!-- Home vazia porque só mostra banner, foto, bio e skills -->
+    </div>
 
-    <section id="portfolio" class="tab-content hidden">
-      <h2>Portfolio</h2>
-      <div class="carousel-horizontal">
-        <div class="card">
-          <img src="project1.jpg" alt="Project 1" />
-          <h3>Project Title</h3>
-          <p>Short project description.</p>
+    <div id="commissions" class="secao">
+      <div class="slide-container">
+        <div class="slide-item">
+          <img src="https://i.imgur.com/commission1.jpg" alt="Commission 1" />
+          <h3>Commission 1</h3>
+          <p>Description of commission 1.</p>
         </div>
-        <div class="card">
-          <img src="project2.jpg" alt="Project 2" />
-          <h3>Project Title</h3>
-          <p>Short project description.</p>
+        <div class="slide-item">
+          <img src="https://i.imgur.com/commission2.jpg" alt="Commission 2" />
+          <h3>Commission 2</h3>
+          <p>Description of commission 2.</p>
         </div>
+        <!-- mais itens -->
       </div>
-    </section>
+    </div>
 
-    <section id="contact" class="tab-content hidden">
-      <h2>Contact</h2>
-      <p>Email: example@email.com</p>
-      <p>Social Media: @example</p>
-    </section>
+    <div id="portfolio" class="secao">
+      <div class="slide-container">
+        <div class="slide-item">
+          <img src="https://i.imgur.com/portfolio1.jpg" alt="Portfolio 1" />
+          <h3>Portfolio 1</h3>
+          <p>Description of portfolio item 1.</p>
+        </div>
+        <div class="slide-item">
+          <img src="https://i.imgur.com/portfolio2.jpg" alt="Portfolio 2" />
+          <h3>Portfolio 2</h3>
+          <p>Description of portfolio item 2.</p>
+        </div>
+        <!-- mais itens -->
+      </div>
+    </div>
+
+    <div id="contact" class="secao">
+      <p class="contact-info">
+        Email: your.email@example.com<br />
+        Twitter: @yourhandle<br />
+        Discord: YourDiscord#1234
+      </p>
+    </div>
+
   </div>
 
-  <button id="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-    ↑ Top
-  </button>
+  <footer>
+    <h2>Follow Me</h2>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+      <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="#"><i class="fab fa-twitch"></i> Twitch</a>
+    </div>
+  </footer>
+
+  <button id="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑ Top</button>
 
   <script>
-    const buttons = document.querySelectorAll('.tab-button');
-    const contents = document.querySelectorAll('.tab-content');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        contents.forEach(content => content.classList.add('hidden'));
-        document.getElementById(button.dataset.tab).classList.remove('hidden');
-      });
-    });
-
+    // Botão voltar ao topo show/hide
     window.addEventListener('scroll', function() {
       const btn = document.getElementById('voltar-topo');
       if (window.scrollY > 300) {
@@ -103,6 +105,31 @@
       } else {
         btn.classList.remove('show');
       }
+    });
+
+    // Troca de seções via botões
+    const buttons = document.querySelectorAll('.nav-buttons button');
+    const sections = document.querySelectorAll('.secao');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remover ativo dos botões
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Mostrar a seção correta
+        const target = btn.getAttribute('data-target');
+        sections.forEach(sec => {
+          if (sec.id === target) {
+            sec.classList.add('ativa');
+          } else {
+            sec.classList.remove('ativa');
+          }
+        });
+
+        // Scroll para o topo do conteúdo
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     });
   </script>
 </body>
