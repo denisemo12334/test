@@ -2,135 +2,211 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Profile</title>
-  <style>
-    /* CSS completo logo abaixo */
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HENRYHALO</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+<button id="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+  ↑ Top
+</button>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const btn = document.getElementById('voltar-topo');
+    if (window.scrollY > 300) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+</script>
+
 <body>
 
-  <div class="topo"></div>
-  <img src="https://i.imgur.com/yourprofilepic.jpg" alt="Profile" class="imagem-circular" />
+  <!-- Top navigation -->
+  <nav class="navbar">
+    <button onclick="scrollToSection('home')">Home</button>
+    <button onclick="scrollToSection('about')">About</button>
+    <button onclick="scrollToSection('portfolio')">Portfolio</button>
+    <button onclick="scrollToSection('commissions')">Commissions</button>
+    <button onclick="scrollToSection('artfight')">Art Fight</button>
+  </nav>
 
-  <div class="conteudo">
-    <h1 class="username">YourName</h1>
-    <p class="bio">
-      This is your bio text. Tell a little about yourself here.
-    </p>
-
-    <div class="habilidades">
-      <h2>Skills</h2>
-      <div class="caixas">
-        <div class="caixa">Drawing</div>
-        <div class="caixa">Digital Art</div>
-        <div class="caixa">Animation</div>
-        <div class="caixa">Web Design</div>
-      </div>
-    </div>
-
-    <hr class="divider" />
-
-    <div class="nav-buttons">
-      <button data-target="home" class="active">Home</button>
-      <button data-target="commissions">Commissions</button>
-      <button data-target="portfolio">Portfolio</button>
-      <button data-target="contact">Contact</button>
-    </div>
-
-    <!-- Seções trocáveis -->
-    <div id="home" class="secao ativa">
-      <!-- Home vazia porque só mostra banner, foto, bio e skills -->
-    </div>
-
-    <div id="commissions" class="secao">
-      <div class="slide-container">
-        <div class="slide-item">
-          <img src="https://i.imgur.com/commission1.jpg" alt="Commission 1" />
-          <h3>Commission 1</h3>
-          <p>Description of commission 1.</p>
-        </div>
-        <div class="slide-item">
-          <img src="https://i.imgur.com/commission2.jpg" alt="Commission 2" />
-          <h3>Commission 2</h3>
-          <p>Description of commission 2.</p>
-        </div>
-        <!-- mais itens -->
-      </div>
-    </div>
-
-    <div id="portfolio" class="secao">
-      <div class="slide-container">
-        <div class="slide-item">
-          <img src="https://i.imgur.com/portfolio1.jpg" alt="Portfolio 1" />
-          <h3>Portfolio 1</h3>
-          <p>Description of portfolio item 1.</p>
-        </div>
-        <div class="slide-item">
-          <img src="https://i.imgur.com/portfolio2.jpg" alt="Portfolio 2" />
-          <h3>Portfolio 2</h3>
-          <p>Description of portfolio item 2.</p>
-        </div>
-        <!-- mais itens -->
-      </div>
-    </div>
-
-    <div id="contact" class="secao">
-      <p class="contact-info">
-        Email: your.email@example.com<br />
-        Twitter: @yourhandle<br />
-        Discord: YourDiscord#1234
-      </p>
-    </div>
-
+  <!-- Home section -->
+  <div id="home" class="topo">
+    <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/85850041_uxBazR54GEx0jwK.png" alt="Profile Picture" class="imagem-circular">
   </div>
 
+  <div class="conteudo">
+    <div class="username">✩ HenryHalo ✩</div>
+
+    <div class="bio">
+      Hello! My name is HenryHalo! I am a digital and traditional artist who works with 2D art and animation. I currently have open commissions and do volunteer work!
+    </div>
+
+    <div class="habilidades">
+      <h2>I'm specialized in:</h2>
+      <div class="caixas">
+        <div class="caixa">Cartoon Style</div>
+        <div class="caixa">2D animation</div>
+        <div class="caixa">Character Design</div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="divider">
+
+    <!-- About Me -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        My name is HenryHalo, and I've been exploring the world of digital and traditional art for many years. Art has always been my passion – whether it's character design, storytelling through illustrations, or bringing movements to life through animation. 
+        <br><br>
+        Over the years, I’ve developed my own colorful style, focusing on expressive characters and dynamic compositions. I love collaborating with others, bringing their ideas to life, and constantly learning new techniques to refine my craft.
+        <br><br>
+        Beyond art, I enjoy being part of creative communities, participating in events like Art Fight, and offering commission services to make art more accessible and personal for everyone. Thank you for visiting my page!
+      </p>
+    </section>
+
+    <!-- Portfolio -->
+    <hr class="divider">
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="URL1" alt="Artwork 1">
+          <div class="portfolio-text">
+            <h3>Character Illustration</h3>
+            <p>Expressive character work showing emotion, pose, and creativity.</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="URL2" alt="Artwork 2">
+          <div class="portfolio-text">
+            <h3>Animation Frame</h3>
+            <p>A preview of one of my 2D animation sequences.</p>
+          </div>
+        </div>
+        <!-- Add more items as needed -->
+      </div>
+    </section>
+
+    <!-- Commissions -->
+    <hr class="divider">
+    <section id="commissions">
+      <h2>My Commissions!</h2>
+      <div class="projetos">
+        <div class="card" onclick="openModal(0)">
+          <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/101109707_5X7OOOtY4WQ9Qnx.png" alt="Headshot">
+          <h3>HEADSHOT</h3>
+          <h3>$5</h3>
+        </div>
+        <div class="card" onclick="openModal(1)">
+          <img src="https://storage.ko-fi.com/cdn/useruploads/display/c50d3062-d554-4ec5-bef7-83a0ce4aafdc_sketch-1747804611242.png" alt="Bust">
+          <h3>BUST</h3>
+          <h3>$10</h3>
+        </div>
+        <div class="card" onclick="openModal(2)">
+          <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/101108566_YTPqmzgINHIKUHX.png" alt="Halfbody">
+          <h3>HALFBODY</h3>
+          <h3>$15</h3>
+        </div>
+        <div class="card" onclick="openModal(3)">
+          <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/101109425_f6HFZvEpZdhIVvj.png" alt="Fullbody">
+          <h3>FULLBODY</h3>
+          <h3>$20</h3>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal for commission details -->
+  <div id="commissionModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <div class="modal-slide" id="slideImage"></div>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <!-- Art Fight -->
+  <hr class="divider">
+  <section id="artfight" class="artfight-section">
+    <h2>Art Fight!</h2>
+    <p>
+      <a href="https://artfight.net/info/about" target="_blank">Art Fight</a> is an annual event for artists! I'm taking part and attacking all kinds of characters... even yours~
+    </p>
+    <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/101111462_8zfhPpzMnYZ1JQK.png" alt="Art Fight Banner" class="artfight-img">
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <h2>Follow Me</h2>
+    <h2>Contact me!</h2>
     <div class="social-links">
-      <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-      <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="#"><i class="fab fa-twitch"></i> Twitch</a>
+      <a href="https://instagram.com/henry_.halo" target="_blank"><span><i class="fab fa-instagram"></i> Instagram</span></a>
+      <a href="https://t.me/HenryHaloArts" target="_blank"><span><i class="fab fa-telegram-plane"></i> Telegram</span></a>
+      <a href="https://toyhou.se/HenryHalo" target="_blank"><span><i class="fas fa-user"></i> Toyhou.se</span></a>
+      <a href="https://ko-fi.com/HenryHalo" target="_blank"><span><i class="fas fa-coffee"></i> Kofi</span></a>
+    </div>
+    <div style="margin-top: 30px;">
+      <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/85778331_muxcP807Cb3EXgG.gif" 
+           alt="Footer Illustration" style="max-width: 100%; height: auto; border-radius: 12px;">
     </div>
   </footer>
 
-  <button id="voltar-topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑ Top</button>
-
   <script>
-    // Botão voltar ao topo show/hide
-    window.addEventListener('scroll', function() {
-      const btn = document.getElementById('voltar-topo');
-      if (window.scrollY > 300) {
-        btn.classList.add('show');
-      } else {
-        btn.classList.remove('show');
+    // Navigation scroll
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Modal system
+    const commissions = [
+      {
+        images: [
+          "https://f2.toyhou.se/file/f2-toyhou-se/images/101109707_5X7OOOtY4WQ9Qnx.png"
+        ],
+        text: "Headshot drawing of your character! Additions like shading and extra characters may cost more."
+      },
+      {
+        images: [
+          "https://storage.ko-fi.com/cdn/useruploads/display/c50d3062-d554-4ec5-bef7-83a0ce4aafdc_sketch-1747804611242.png"
+        ],
+        text: "Bust drawing of your character! Additions like shading and extra characters may cost more."
+      },
+      {
+        images: [
+          "https://f2.toyhou.se/file/f2-toyhou-se/images/101108566_YTPqmzgINHIKUHX.png"
+        ],
+        text: "Halfbody drawing of your character! Additions like shading and extra characters may cost more."
+      },
+      {
+        images: [
+          "https://f2.toyhou.se/file/f2-toyhou-se/images/101109425_f6HFZvEpZdhIVvj.png"
+        ],
+        text: "Fullbody drawing of your character! Additions like shading and extra characters may cost more."
       }
-    });
+    ];
 
-    // Troca de seções via botões
-    const buttons = document.querySelectorAll('.nav-buttons button');
-    const sections = document.querySelectorAll('.secao');
+    function openModal(index) {
+      const modal = document.getElementById("commissionModal");
+      const slide = document.getElementById("slideImage");
+      const text = document.getElementById("modalText");
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Remover ativo dos botões
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+      slide.innerHTML = commissions[index].images.map(url => `<img src="${url}" style="width:100%; margin-bottom:10px;">`).join('');
+      text.innerText = commissions[index].text;
 
-        // Mostrar a seção correta
-        const target = btn.getAttribute('data-target');
-        sections.forEach(sec => {
-          if (sec.id === target) {
-            sec.classList.add('ativa');
-          } else {
-            sec.classList.remove('ativa');
-          }
-        });
+      modal.style.display = "block";
+    }
 
-        // Scroll para o topo do conteúdo
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
+    function closeModal() {
+      document.getElementById("commissionModal").style.display = "none";
+    }
   </script>
 </body>
 </html>
